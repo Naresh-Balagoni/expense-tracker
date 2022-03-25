@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-
+import CreateProfile from './CreateProfile/createProfile';
+import "./CreateProfile/createProfile.css"
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './CreateProfile/HomePage/homePage';
+import NavBar from './navBar';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       <NavBar/>
+      <Routes>
+         <Route exact path ='./homePage' component ={<HomePage/>}/>
+         <Route exact path ='./createProfile' component ={<CreateProfile/>}/>
+      </Routes>
+       <div className="header">
+        <div >
+        <p> WELCOME TO EXPENSE TRACKER </p>
+        </div>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>
     </div>
-  );
+  )
 }
 
 export default App;
